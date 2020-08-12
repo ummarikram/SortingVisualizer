@@ -2,7 +2,7 @@
 
 Experience sorting in a new way! 
 
-# ALGORITHMS IMPLEMENTED 
+## ALGORITHMS IMPLEMENTED 
 
 * Bubble Sort
 
@@ -24,14 +24,14 @@ Experience sorting in a new way!
 
 ![Image of Merge Sort](https://github.com/ummarikram/SortingVisualizer/blob/master/Run/MergeSort.gif)
 
-# DEPENDENCIES
+## DEPENDENCIES
 
 * GLFW
 * GLEW
 * GLM
 * FREETYPE
 
-# INSTRUCTIONS
+## INSTRUCTIONS
 
 * Hover over your desired sorting algorithm and use the left mouse button to select one.
 ![Image of hover](https://github.com/ummarikram/SortingVisualizer/blob/master/Run/Hover.gif)
