@@ -26,10 +26,13 @@ Experience sorting in a new way!
 
 ## DEPENDENCIES
 
-* GLFW
-* GLEW
-* GLM
-* FREETYPE
+* GLFW [https://github.com/glfw/glfw]
+
+* GLEW [https://github.com/nigels-com/glew]
+
+* GLM [https://github.com/g-truc/glm]
+
+* FREETYPE [https://github.com/ubawurinna/freetype-windows-binaries]
 
 ## INSTRUCTIONS
 
