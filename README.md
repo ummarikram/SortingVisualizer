@@ -38,10 +38,10 @@ Experience sorting in a new way!
 
 ## DEPENDENCIES
 
-* [GLFW](https://github.com/glfw/glfw)
+[GLFW](https://github.com/glfw/glfw)
 
-* [GLEW](https://github.com/nigels-com/glew)
+[GLEW](https://github.com/nigels-com/glew)
 
-* [GLM](https://github.com/g-truc/glm)
+[GLM](https://github.com/g-truc/glm)
 
-* [FREETYPE](https://github.com/ubawurinna/freetype-windows-binaries)
+[FREETYPE](https://github.com/ubawurinna/freetype-windows-binaries)
