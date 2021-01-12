@@ -24,21 +24,24 @@ Experience sorting in a new way!
 
 ![Image of Merge Sort](https://github.com/ummarikram/SortingVisualizer/blob/master/Run/MergeSort.gif)
 
-## DEPENDENCIES
-
-* GLFW [https://github.com/glfw/glfw]
-
-* GLEW [https://github.com/nigels-com/glew]
-
-* GLM [https://github.com/g-truc/glm]
-
-* FREETYPE [https://github.com/ubawurinna/freetype-windows-binaries]
-
 ## INSTRUCTIONS
 
 * Hover over your desired sorting algorithm and use the left mouse button to select one.
 ![Image of hover](https://github.com/ummarikram/SortingVisualizer/blob/master/Run/Hover.gif)
+
 * After choosing the sorting algorithm, an unsorted array of bars will be generated.
 ![Image of selection](https://github.com/ummarikram/SortingVisualizer/blob/master/Run/Selection.gif)
+
 * Simply press the 'ENTER' key to visualize sorting.
 * Green bars represent successful completition of the algorithm.
+
+
+## DEPENDENCIES
+
+* [GLFW](https://github.com/glfw/glfw)
+
+* [GLEW](https://github.com/nigels-com/glew)
+
+* [GLM](https://github.com/g-truc/glm)
+
+* [FREETYPE](https://github.com/ubawurinna/freetype-windows-binaries)
