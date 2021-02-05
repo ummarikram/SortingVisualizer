@@ -12,6 +12,7 @@
 #include "Shapes.h"
 #include "HoverEffect.h"
 #include "Visualizer.h"
+#include "Algorithms.h"
 
 int main(int argc, char** argv)
 {
@@ -100,8 +101,8 @@ int main(int argc, char** argv)
         glfwSetWindowPos(window, Screen_Width / 20, Screen_Height / 20);
 
         // Variables for slowing down merge sort inorder to visualize it
-        int RunCheckCurrSize = 1 , RunCheckLeftStart = 0;
-        
+        int RunCheckCurrSize = 1, RunCheckLeftStart = 0;
+
         /* Loop until the user closes the window */
         while (!glfwWindowShouldClose(window))
         {
@@ -154,6 +155,11 @@ int main(int argc, char** argv)
                     Sorting.DrawMergeSort(RunCheckCurrSize, RunCheckLeftStart);
                 }
 
+                else if (Choice == 6)
+                {
+                    Sorting.DrawCocktailSort();
+                }
+
                 // Display FPS
                 FPSDisplay(window, "Sorting Visualizer", frameCount, previousFPSTime, currentTime);
 
@@ -184,6 +190,11 @@ int main(int argc, char** argv)
                     else if (Choice == 5)
                     {
                         Sorting.MergeSortNodes(RunCheckCurrSize, RunCheckLeftStart);
+                    }
+
+                    else if (Choice == 6)
+                    {
+                        Sorting.CocktailSortNodes();
                     }
 
                 }
