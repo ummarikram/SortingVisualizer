@@ -1,7 +1,10 @@
 #pragma once
 
-constexpr auto Screen_Width = 1280;
-constexpr auto Screen_Height = 720;
+int Get_Width() { return glfwGetVideoMode(glfwGetPrimaryMonitor())->width; }
+int Get_Height() { return glfwGetVideoMode(glfwGetPrimaryMonitor())->height; }
+
+#define Screen_Width Get_Width()
+#define Screen_Height Get_Height()
 
 // For FPS & Delay
 double previousDelayTime = glfwGetTime();
@@ -15,11 +18,8 @@ int GLInit(GLFWwindow*& window)
     if (!glfwInit())
         return -1;
 
-    // Disable resizing
-    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(Screen_Width, Screen_Height, "Sorting Visualizer", NULL, NULL);
+    window = glfwCreateWindow(Screen_Width, Screen_Height, "Sorting Visualizer", glfwGetPrimaryMonitor(), NULL);
 
     // if error
     if (!window)

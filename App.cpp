@@ -54,7 +54,7 @@ int main(int argc, char** argv)
     BindText(shader);
 
     // Loop until choice is selected OR window is not closed
-    while (Choice == 0 && !glfwWindowShouldClose(window))
+    while (Choice == 0 && !glfwWindowShouldClose(window) && !QuitApp)
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
@@ -92,7 +92,7 @@ int main(int argc, char** argv)
     glfwDestroyWindow(window);
 
     // if any choice was selected
-    if (Choice != 0)
+    if (Choice != 0 && !QuitApp)
     {
         // Initialize new window
         GLInit(window);

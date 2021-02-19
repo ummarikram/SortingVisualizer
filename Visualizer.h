@@ -2,6 +2,7 @@
 
 bool StartVisualizing = false;
 bool LeftMousePressed = false;
+bool QuitApp = false;
 
 class Visualizer
 {
@@ -18,21 +19,21 @@ public:
 
     Visualizer()
     {
-        NodeCount = 159;
+        NodeCount = round(Screen_Width * 0.124);
         Nodes = new Node[NodeCount];
 
         for (int i = 0; i < NodeCount; i++)
         {
             Nodes[i].Position.x = 5;
-            Nodes[i].Position.y = Screen_Height - 5;
+            Nodes[i].Position.y = round(Screen_Height * 0.707);
         }
 
-        SetChoice(0, "BUBBLE SORT", 150.0f, 720 - 570);
-        SetChoice(1, "SELECTION SORT", 540.0f, 720 - 570);
-        SetChoice(2, "INSERTION SORT", 950.0f, 720 - 570);
-        SetChoice(3, "QUICK SORT", 350.0f, 720 - 400);
-        SetChoice(4, "MERGE SORT", 780.0f, 720 - 400);
-        SetChoice(5, "COCKTAIL SORT", 540.0f, 720 - 230);
+        SetChoice(0, "BUBBLE SORT",    Screen_Width * 0.12, Screen_Height * 0.20);
+        SetChoice(1, "SELECTION SORT", Screen_Width * 0.42, Screen_Height * 0.20);
+        SetChoice(2, "INSERTION SORT", Screen_Width * 0.74, Screen_Height * 0.20);
+        SetChoice(3, "QUICK SORT",     Screen_Width * 0.27, Screen_Height * 0.44);
+        SetChoice(4, "MERGE SORT",     Screen_Width * 0.61, Screen_Height * 0.44);
+        SetChoice(5, "COCKTAIL SORT",  Screen_Width * 0.42, Screen_Height * 0.68);
     }
 
     void SetCursorPosition(GLFWwindow* window)
@@ -73,11 +74,13 @@ public:
 
     bool CheckCollision(float Px, float Py, int& Index)
     {
+        float ScaleFactor = float(Screen_Width) / float(1280);
+
         for (int itr = 0; itr < noOfChoices; itr++)
         {
             // if collides
-            if (Px >= Choices[itr].x && Px <= Choices[itr].x + Choices[itr].length * 15
-                && Py >= Choices[itr].y - 20 && Py <= Choices[itr].y)
+            if (Px >= Choices[itr].x && Px <= Choices[itr].x + (Choices[itr].length * 14.5 * ScaleFactor)
+                && Py >= Choices[itr].y - (20 * ScaleFactor) && Py <= Choices[itr].y)
             {
                 Index = itr;
                 return false;
@@ -158,10 +161,14 @@ public:
 
     int Input(GLFWwindow* window)
     {
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        {
+            QuitApp = true;
+        }
+
         if (glfwGetKey(window, GLFW_KEY_ENTER) == GLFW_PRESS)
         {
             StartVisualizing = true;
-
         }
 
         if (LeftMousePressed)
